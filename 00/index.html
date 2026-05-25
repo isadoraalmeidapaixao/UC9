@@ -6,27 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <!--captura dados do usuario-->
-    <input id="cepInput" type="text" placeholder="Informe o CEP">
-    <!--registra ação do usuario-->
+    <!--Caputra dados do usuário-->   
+    <input id="cepInput" type="text" placeholder="Informe o CEP...">
+    <!--Registra a ação do usuário--> 
     <button id="btnBuscar">BUSCAR</button>
-    <!--exibe o resultad final ao usuario-->
-    <p id="resultado">Aguardando busca... !</p>
+
+    <!--Exibe o resultado final, ao usuário--> 
+    <p id="resultado">Aguardando busca...</p>
 
     <script>
-        const cepInput = document.getElementById("cepInput")
-        const btnBuscar = document.getElementById("btnBuscar")
-        const resultado = document.getElementById("resultado")
+        const cepInput = document.getElementById("cepInput");
+        const btnBuscar = document.getElementById("btnBuscar");
+        const resultado = document.getElementById("resultado");
 
         btnBuscar.addEventListener('click', async () => {
-            const valorDigitado = cepInput.innerText;
-            var resposta = await fetch('https://viacep.com.br/ws/${valorDigitado}/json/')
+            const valorDigitado = cepInput.value;
+            var resposta = await fetch(`https://viacep.com.br/ws/${valorDigitado}/json/`)
             var dados = await resposta.json()
 
-            document.getElementById("resultado").innerText = dados.logradouro + "-" + dados.bairro + "-" + dados.estado
-           })
-
-
+            resultado.innerText = dados.logradouro + " - " + dados.bairro + " - " + dados.localidade
+        })
     </script>
 </body>
 </html>

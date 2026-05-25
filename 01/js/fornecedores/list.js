@@ -4,9 +4,20 @@ async function carregarFornecedores() {
         const fornecedores = await resposta.json()
 
         const tbody = document.getElementById("tabela-fornecedores")
+        tbody.innerHTML = '';
 
+        fornecedores.forEach(fornecedor => {
+            const novaLinhaDaTabela = document.createElement('tr')
+            novaLinhaDaTabela.innerHTML = `
+                <td>${fornecedor.id}</td>
+                <td>${fornecedor.nomeFantasia}</td>
+                <td>${fornecedor.cnpj}</td>
+            `;
+            tbody.appendChild(novaLinhaDaTabela)
+        });
+        
     } catch (error) {
-        console.log("Erro ao carregar fornecedores", error)
+        console.error("Erro ao carregar fornecedores", error)
     }
 }
 

@@ -2,8 +2,7 @@
 Desenvolver interface de usuário e usabilidade  de aplicação web
  
 #####  CARGA HORÁRIA: 96 HORAS
- 
- 
+  
 ## Indicadores
 1. Planeja layout, de acordo com padrões da WEB e os princípios da arquitetura da informação.  
 2. Desenvolve layout utilizando linguagens de marcação e formatação de conteúdo, conforme padrões do W3C.  
@@ -45,4 +44,5 @@ Leiaute responsivo com media queries e mobile-first.
 recomendações de boas práticas.  
 - Servidor web: conceitos, aplicação, parametrização e publicação de páginas de Internet.  
 - Domínios de Internet: conceito, registro, cotação de preços e disponibilidade de
-serviços.
+serviços
+ 
