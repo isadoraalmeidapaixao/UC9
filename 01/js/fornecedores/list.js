@@ -1,6 +1,6 @@
 async function carregarFornecedores() {
     try {
-        const resposta = await fetch("https://localhost:7135/api/Fornecedores")
+        const resposta = await fetch(`${API_BASE_URL}/fornecedores`)
         const fornecedores = await resposta.json()
 
         const tbody = document.getElementById("tabela-fornecedores")
