@@ -15,6 +15,11 @@ async function carregarProdutos() {
             <td>${produto.preco}</td>
             <td>${produto.quantidadeEstoque}</td>
             <td>${produto.fornecedorId}</td>
+            <td>
+                <a href="detalhes.html">Detalhes</a>
+                <a href="editar.html">Editar</a>
+                <a href="excluir.html">Excluir</a>
+            </td>
             `
         tbody.appendChild(tr)
         });
