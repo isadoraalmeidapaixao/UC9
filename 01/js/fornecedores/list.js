@@ -12,6 +12,11 @@ async function carregarFornecedores() {
                 <td>${fornecedor.id}</td>
                 <td>${fornecedor.nomeFantasia}</td>
                 <td>${fornecedor.cnpj}</td>
+            <td>
+                <a href="./detalhes.html?id=${fornecedor.id}">Detalhes</a>
+                <a href="editar.html">Editar</a>
+                <a href="excluir.html">Excluir</a>
+            </td>
             `;
             tbody.appendChild(novaLinhaDaTabela)
         });
