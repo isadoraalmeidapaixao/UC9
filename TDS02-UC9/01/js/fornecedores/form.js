@@ -1,4 +1,4 @@
-const form = document.getElementById(form-fornecedor);
+const form = document.getElementById('form-fornecedor');
 
 async function salvarFornecedor() {
 
@@ -6,20 +6,15 @@ async function salvarFornecedor() {
         e.preventDefault();
 
         const nome = document.getElementById('nomeFantasia').value
-        const cnpj = parseFloat(document.getElementById('cnpj').value)
+        const cnpj = document.getElementById('cnpj').value
 
         if (!nome || !cnpj) {
             alert('Por favor, preencha todos os campos obrigatórios!');
             return;
         }
-
-        if(quantidade < 0) {
-            alert('A quantidade não pode ser menor que 0!');
-            return;
-        }
         
         const fornecedorDados = {
-            nome: nome,
+            nomeFantasia: nome,
             cnpj: cnpj,
         }
 
@@ -43,4 +38,4 @@ async function salvarFornecedor() {
     })
 }
 
-salvarProduto();
+salvarFornecedor();
