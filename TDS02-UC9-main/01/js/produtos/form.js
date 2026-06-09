@@ -18,16 +18,12 @@ async function salvarProduto() {
             document.getElementById('nome').value = produto.nome;      
             document.getElementById('preco').value = produto.preco;
             document.getElementById('quantidadeEstoque').value = produto.quantidadeEstoque;
-            document.getElementById('fornecedorId').value = produto.fornecedorId;
-
 
         } catch(error) {
             console.log("Erro ao carregar produto: ", error);
             alert('Erro ao carregar dados do produto');
         }
     }
-
-
 
     // caputrar o evento de 'click' em 'botaoSalvar'
     form.addEventListener('submit', async(e) => {
