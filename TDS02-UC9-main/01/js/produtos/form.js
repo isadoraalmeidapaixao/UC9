@@ -26,8 +26,6 @@ async function salvarProduto() {
         }
     }
 
-
-
     // caputrar o evento de 'click' em 'botaoSalvar'
     form.addEventListener('submit', async(e) => {
         e.preventDefault();
