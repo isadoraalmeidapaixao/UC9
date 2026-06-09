@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Fornecedor</title>
     <link rel="stylesheet" href="../../css/global.css">
     <script src="../../js/fornecedores/form.js" defer></script>
-    <script src="../../js/config.js" defer></script>
+    <script src="../../js/config.js" ></script>
 </head>
 <body>
     <!-- Header -->
@@ -19,14 +19,14 @@
     </header>
 
     <main>
-        <h2>Novo Fornecedor</h2>
+        <h2 id="titulo-pagina">Novo Fornecedor</h2>
 
         <form id="form-fornecedor">
-            <label for="">Razão Social:</label>
+            <label for="nome">Razão Social:</label>
             <input type="text" name="nome" id="nome">
 
-            <label for="">CNPJ:</label>
-            <input type="text" name="cpnj" id="cpnj">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" name="cpnj" id="cnpj">
 
             <button type="submit">Salvar</button>
             <a href="index.html" class="button" style="background-color: gray;">Cancelar</a>

@@ -1,6 +1,33 @@
 const form = document.getElementById("form-produto");
 
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id')
+
 async function salvarProduto() {
+    if(id) {
+        document.getElementById('titulo-pagina').innerText = "Editar Produto";
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/produtos/${id}`);
+            if (!response.ok) throw new Error ("Erro ao carregar produto!");
+
+            const produto = await response.json();
+
+            console.log(produto);
+
+            document.getElementById('nome').value = produto.nome;      
+            document.getElementById('preco').value = produto.preco;
+            document.getElementById('quantidadeEstoque').value = produto.quantidadeEstoque;
+            document.getElementById('fornecedorId').value = produto.fornecedorId;
+
+
+        } catch(error) {
+            console.log("Erro ao carregar produto: ", error);
+            alert('Erro ao carregar dados do produto');
+        }
+    }
+
+
 
     // caputrar o evento de 'click' em 'botaoSalvar'
     form.addEventListener('submit', async(e) => {
@@ -25,17 +52,19 @@ async function salvarProduto() {
         
         // tentar enviar esses valores para minha API
         const produtoDados = {
+            id: id ? parseInt(id) : 0,
             nome: nome,
             preco: preco,
             quantidadeEstoque: quantidadeEstoque,
             fornecedorId: fornecedorId
         }
 
-        const url = `${API_BASE_URL}/produtos`;
+        const method = id ? 'PUT' : 'POST' //se o method tem id, atualiza, se não, cria
+        const url = id ? `${API_BASE_URL}/produtos/${id}` : `${API_BASE_URL}/preodutos`;
 
         try {
             const response = await fetch(url, {
-                method: 'POST',
+                method: method,
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(produtoDados)
             });
