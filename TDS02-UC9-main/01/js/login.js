@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({email, senha})
                 });
 
-                console.log(response.json())
+                console.log(await response.json())
 
             } catch (err) {
                 console.log(err);
