@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Fornecedor</title>
+    <title>Excluir Fornecedor</title>
     <link rel="stylesheet" href="../../css/global.css">
     <script src="../../js/config.js"></script>
-    <script src="../../js/fornecedores/detalhes.js" defer></script>
+    <script src="../../js/fornecedores/excluir.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,13 +18,13 @@
     </header>
 
     <main>
-        <h2>Detalhes do Fornecedor</h2>
+        <h2>Confirmar Exclusão</h2>
+        <p>Você tem certeza que deseja excluir o fornecedor abaixo?</p>
         
-        <div id="dados-fornecedor">
-            <p>Carregando dados...</p>
-        </div>
+        <div id="dados-fornecedor" style="margin-bottom: 20px;"></div>
 
-        <a href="index.html" class="button">Voltar</a>
+        <button id="btn-excluir" class="button-danger">Sim, Excluir</button>
+        <a href="index.html" class="button" style="background-color: #6c757d;">Cancelar</a>
     </main>
 </body>
 </html>
