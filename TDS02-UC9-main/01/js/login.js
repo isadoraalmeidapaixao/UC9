@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById("main-content")
     const navMenu = document.getElementById("nav-menu")
     const btnLogout = document.getElementById("btn-logout")
-    if(false) {
+    if(true) {
         authSection.style.display = 'none';
         mainContent.style.display = 'block';
         navMenu.style.display = 'inline-block'
@@ -14,5 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.style.display = 'none';
         navMenu.style.display = 'none'
         btnLogout.style.display = 'none'
+    }
+
+    const loginForm = document.getElementById("login-form");
+    if(loginForm) {
+        loginForm.addEventListener('submit', async(e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+
+            try {
+                const response = await fetch(API_BASE_URL + '/Usuarios/autenticar', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({email, senha})
+                });
+
+                console.log(response.json())
+
+            } catch (err) {
+                console.log(err);
+            }
+        });
     }
 })
