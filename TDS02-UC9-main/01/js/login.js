@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById("main-content")
     const navMenu = document.getElementById("nav-menu")
     const btnLogout = document.getElementById("btn-logout")
-    if(true) {
+    if(false) {
         authSection.style.display = 'none';
         mainContent.style.display = 'block';
         navMenu.style.display = 'inline-block'
