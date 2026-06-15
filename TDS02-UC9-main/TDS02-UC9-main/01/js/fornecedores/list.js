@@ -6,17 +6,18 @@ async function carregarFornecedores() {
         });
 
         if(response.status == 401) {
-            //redireciona para login, remove token
-            alert("Sessão expirada, faça login novamente!")
+            // rediraciona para o login, remove o token
+            alert("Sessão expirada! Por favor, faça login novamente!");
             localStorage.removeItem('token');
             window.location.href = '../../index.html';
             return;
-
         } else if (response.status == 403) {
-            alert("Sem acesso ao recurso!")
+            // alerta em tela, "NÃO AUTORIZADO", redireciona para o index
+            alert("Sem acesso ao recurso!");
             window.location.href = '../../index.html';
             return;
         }
+
         const fornecedores = await response.json();
         
         const tbody = document.getElementById('tabela-fornecedores');

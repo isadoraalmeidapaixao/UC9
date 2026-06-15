@@ -1,11 +1,12 @@
 const API_BASE_URL = 'https://localhost:7135/api';
 
-//função para montar cabeçalhos padrão
+// Função para montar cabeçalhos padrão
 function getHeaders() {
-    const headers = {
+    const headers =  {
         'Content-Type': 'application/json'
     }
 
+    // tenta carregar o token do local storage
     const token = localStorage.getItem('token');
 
     if(token) {

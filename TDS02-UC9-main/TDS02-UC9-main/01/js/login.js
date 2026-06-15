@@ -18,10 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const loginForm = document.getElementById("login-form");
-    if(loginForm) {
-        // escrevo lógica de enviar submit com email e senha
-        // recupero da resposta o token
-        // salvo o token no localStorage
+    if(loginForm) {        
         loginForm.addEventListener('submit', async(e) => {
             e.preventDefault();
 
@@ -39,15 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const data = await response.json();
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('usuario', JSON.stringify(data.usuario));
-                    window.location.reload(); // realoada a página
+                    window.location.reload();
                 } else {
                     const errorData = await response.json();
-                    console.log(errorData)}
+                    console.log(errorData);
+                }
 
             } catch (err) {
                 console.log(err);
             }
-
         });
     }
 });
@@ -56,5 +53,4 @@ function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
     window.location.reload();
-
 }
