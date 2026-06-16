@@ -1,6 +1,13 @@
 async function carregarProdutos() {
     try {
-        const response = await fetch(`${API_BASE_URL}/Produtos`);
+        const response = await fetch(`${API_BASE_URL}/Produtos`, {
+            method: 'GET',
+            headers: getHeaders()
+        });
+
+        if (!response.ok) {
+        throw new Error(`Erro HTTP ${response.status}`);
+}
         const produtos = await response.json();
         
         const tbody = document.getElementById('tabela-produtos');
